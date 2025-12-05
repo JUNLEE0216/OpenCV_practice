@@ -20,7 +20,7 @@ canvas = np.zeros((height, width, 3), dtype=np.uint8)
 # 이전 좌표 저장 변수
 prev_center = None
 draw_color = (0, 255, 0)   # 선 색상 (초록)
-thickness = 4              # 선 두께
+thickness = 5              # 선 두께
 
 while True:
     ret, frame = cap.read()
@@ -86,6 +86,13 @@ while True:
         break
     elif key == ord('c'):  # 'c' 누르면 캔버스 초기화
         canvas = np.zeros((height, width, 3), dtype=np.uint8)
+
+    elif key == ord('r'):
+        draw_color = (0, 0, 255)  # 빨강
+    elif key == ord('g'):
+        draw_color = (0, 255, 0)  # 초록
+    elif key == ord('b'):
+        draw_color = (255, 0, 0)  # 파랑
 
 # 자원 해제
 cap.release()
